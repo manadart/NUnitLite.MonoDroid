@@ -3,9 +3,13 @@ New Text
 
 This solution is a compilation of NUnitLite targeting Mono for Android. 
 
-At present, there is no runner - If you include this library in an android application, the tests can be run on the emulator.
+At present, there is no runner - If you include this library in an android application, the tests can be run on an emulator.
 
 I included a binary return from the test fixture run, so that the calling application can determine if the all the tests passed or not.
+
+The downloads section has a couple of images for examples of test fixture executions. The test application simply changed the colour of the text based on the boolean return from the run.
+
+I will add an example runner project when I can find the time.
 
 Original Text
 ==============
