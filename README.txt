@@ -1,3 +1,15 @@
+New Text
+==============
+
+This solution is a compilation of NUnitLite targeting Mono for Android. 
+
+At present, there is no runner - If you include this library in an android application, the tests can be run on the emulator.
+
+I included a binary return from the test fixture run, so that the calling application can determine if the all the tests passed or not.
+
+Original Text
+==============
+
 NUnitLite Version 0.5 - June 14, 2009
 
 NUnitLite is a small-footprint implementation of much of the current NUnit framework. It is distributed in source form and is intended for use in situations where NUnit is too large or complex. In particular, it targets mobile and embedded environments as well as testing of applications that require "embedding" the framework in another piece of software, as when testing plugin architectures.
