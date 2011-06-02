@@ -1,0 +1,24 @@
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\ResolveAssemblyReference.cache
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.dll
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.pdb
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.dll.mdb
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.NUnitLite.apk
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.NUnitLite-Signed.apk
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\NUnitLite.dll
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\NUnitLite.pdb
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\android\bin\NUnitLite.NUnitLite.apk
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\R.cs.flag
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\debug.keystore
+F:\Temp Projects\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\uploadflags.txt
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.dll
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.pdb
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.dll.mdb
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.NUnitLite.apk
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\bin\Debug\NUnitLite.NUnitLite-Signed.apk
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\ResolveAssemblyReference.cache
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\NUnitLite.dll
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\NUnitLite.pdb
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\android\bin\NUnitLite.NUnitLite.apk
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\R.cs.flag
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\debug.keystore
+F:\Subversion\sandbox\jphillips\NUnitLite.MonoDroid\NUnitLite.MonoDroid\obj\Debug\uploadflags.txt
