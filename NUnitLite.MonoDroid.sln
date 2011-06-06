@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitLite.MonoDroid", "NUnitLite.MonoDroid\NUnitLite.MonoDroid.csproj", "{26327C81-7655-443D-9E04-443AC07BD6CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitLite.MonoDroid.Example", "NUnitLite.MonoDroid.Example\NUnitLite.MonoDroid.Example.csproj", "{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,12 @@ Global
 		{26327C81-7655-443D-9E04-443AC07BD6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26327C81-7655-443D-9E04-443AC07BD6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26327C81-7655-443D-9E04-443AC07BD6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FEF2C3-62C7-432E-8240-18BF11AC2F1D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
