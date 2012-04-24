@@ -94,13 +94,13 @@ namespace NUnitLite.Runner
         /// <param name="args">An array of arguments</param>
         public bool Execute(string[] args)
         {
-            bool success = true;
+            var success = true;
 
             // NOTE: This must be directly called from the
             // test assembly in order for the mechanism to work.
-            Assembly callingAssembly = Assembly.GetCallingAssembly();
+            var callingAssembly = Assembly.GetEntryAssembly();
 
-            this.options = ProcessArguments( args );
+            options = ProcessArguments( args );
 
             if (!options.Help && !options.Error)
             {

@@ -5,16 +5,16 @@ namespace NUnitLite.MonoDroid.Example
     [TestFixture]
     public class TestFixture
     {
-        //[Test]
-        //public void TestPass()
-        //{
-        //    Assert.That(true);
-        //}
-
         [Test]
-        public void TestFail()
+        public void TestPass()
         {
-            Assert.That(false, "This test failed.");
+            Assert.That(true);
         }
+
+        //[Test]
+        //public void TestFail()
+        //{
+        //    Assert.That(false, "This test failed.");
+        //}
     }
 }

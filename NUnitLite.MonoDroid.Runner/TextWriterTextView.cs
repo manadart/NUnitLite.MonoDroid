@@ -2,14 +2,14 @@ using System.IO;
 using System.Text;
 using Android.Widget;
 
-namespace NUnitLite.MonoDroid.Example
+namespace NUnitLite.MonoDroid
 {
     /// <summary>Implementation of TextWriter that outputs to a TextView control.</summary>
     public class TextWriterTextView : TextWriter
     {
         readonly TextView _textView;
 
-        public override Encoding Encoding { get { return System.Text.Encoding.UTF8; } }
+        public override Encoding Encoding { get { return Encoding.UTF8; } }
 
         public TextWriterTextView(TextView textView) { _textView = textView; }
 
