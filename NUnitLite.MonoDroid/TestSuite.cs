@@ -133,7 +133,7 @@ namespace NUnitLite
             return Run(new NullListener());
         }
 
-        public TestResult Run(TestListener listener)
+        public TestResult Run(ITestListener listener)
         {
             int count = 0, failures = 0, errors = 0;
             listener.TestStarted(this);

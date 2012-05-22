@@ -153,7 +153,7 @@ namespace NUnitLite
             return Run( new NullListener() );
         }
 
-        public TestResult Run(TestListener listener)
+        public TestResult Run(ITestListener listener)
         {
             listener.TestStarted(this);
 
@@ -185,7 +185,7 @@ namespace NUnitLite
             }
         }
 
-        protected virtual void Run(TestResult result, TestListener listener)
+        protected virtual void Run(TestResult result, ITestListener listener)
         {
             IgnoreAttribute ignore = (IgnoreAttribute)Reflect.GetAttribute(method, typeof(IgnoreAttribute));
             if (this.RunState == RunState.NotRunnable)

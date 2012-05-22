@@ -72,6 +72,6 @@ namespace NUnitLite
         System.Collections.IDictionary Properties { get; }
 
         TestResult Run();
-        TestResult Run(TestListener listener);
+        TestResult Run(ITestListener listener);
     }
 }

@@ -44,8 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Runner.cs" />
-    <Compile Include="TextWriterTextView.cs" />
+    <Compile Include="TestResultsListAdapter.cs" />
+    <Compile Include="TestResultViewHolder.cs" />
+    <Compile Include="TestRunDetailsActivity.cs" />
+    <Compile Include="TestRunInfo.cs" />
+    <Compile Include="TestRunContext.cs" />
+    <Compile Include="TestRunnerActivity.cs" />
+    <Compile Include="UITestListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NUnitLite.MonoDroid\NUnitLite.MonoDroid.csproj">
