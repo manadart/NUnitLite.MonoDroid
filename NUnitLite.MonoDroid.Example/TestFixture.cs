@@ -1,3 +1,4 @@
+using Java.Lang;
 using NUnit.Framework;
 
 namespace NUnitLite.MonoDroid.Example
@@ -11,10 +12,16 @@ namespace NUnitLite.MonoDroid.Example
             Assert.That(true);
         }
 
-        //[Test]
-        //public void TestFail()
-        //{
-        //    Assert.That(false, "This test failed.");
-        //}
+        [Test]
+        public void TestFail()
+        {
+            Assert.That(false, "This test failed.");
+        }
+    
+        [Test]
+        public void TestException()
+        {
+            throw new Exception("Test exception");
+        }
     }
 }
