@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace NUnitLite.MonoDroid.Example
 {
-    [Activity(Label = "Test details")]
+    [Activity(Label = "Test Details")]
     public class DetailsActivity: TestRunDetailsActivity
     {
     }
