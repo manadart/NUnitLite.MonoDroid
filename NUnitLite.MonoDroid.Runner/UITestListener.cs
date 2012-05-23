@@ -40,17 +40,17 @@ namespace NUnitLite.MonoDroid
         /// <param name="test"></param>
         public void TestStarted(ITest test)
         {
-            TestRunContext.Current.TestResults.Add(new TestRunInfo()
-            {
-                Description = test.Name,
-                TestCaseName = test.FullName,
-                Running = true,
-                Passed = false,
-                IsTestSuite = test is TestSuite
-            });
-
             _threadHandler.Post(() =>
             {
+                TestRunContext.Current.TestResults.Add(new TestRunInfo()
+                {
+                    Description = test.Name,
+                    TestCaseName = test.FullName,
+                    Running = true,
+                    Passed = false,
+                    IsTestSuite = test is TestSuite
+                });
+
                 _listAdapter.NotifyDataSetInvalidated();
                 _listAdapter.NotifyDataSetChanged();
             });
@@ -62,18 +62,18 @@ namespace NUnitLite.MonoDroid
         /// <param name="result">The result.</param>
         public void TestFinished(TestResult result)
         {
-            var testRunItem = TestRunContext.Current.TestResults
-                    .FirstOrDefault(item => item.TestCaseName == result.Test.FullName);
-
-            if (testRunItem != null)
-            {
-                testRunItem.Passed = result.IsSuccess;
-                testRunItem.Running = false;
-                testRunItem.TestResult = result;
-            }
-
             _threadHandler.Post(() =>
             {
+                var testRunItem = TestRunContext.Current.TestResults
+                    .FirstOrDefault(item => item.TestCaseName == result.Test.FullName);
+
+                if (testRunItem != null)
+                {
+                    testRunItem.Passed = result.IsSuccess;
+                    testRunItem.Running = false;
+                    testRunItem.TestResult = result;
+                }
+
                 _listAdapter.NotifyDataSetInvalidated();
                 _listAdapter.NotifyDataSetChanged();
             });
