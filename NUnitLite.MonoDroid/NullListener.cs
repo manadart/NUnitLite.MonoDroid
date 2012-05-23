@@ -25,7 +25,7 @@ using System;
 
 namespace NUnitLite
 {
-    public class NullListener : TestListener
+    public class NullListener : ITestListener
     {
         public void TestStarted(ITest test) { }
 
