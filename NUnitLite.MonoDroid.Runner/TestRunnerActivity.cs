@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using NUnitLite.Runner;
@@ -79,8 +76,14 @@ namespace NUnitLite.MonoDroid
         {
             var testRunItem = TestRunContext.Current.TestResults[position];
 
-            Intent intent = new Intent(this,GetDetailsActivityType);
-            intent.PutExtra("TestCaseName",testRunItem.TestCaseName);
+            if (testRunItem.Running)
+            {
+                Toast.MakeText(this, "This test is still running.", ToastLength.Short).Show();
+                return;
+            }
+
+            var intent = new Intent(this, GetDetailsActivityType);
+            intent.PutExtra("TestCaseName", testRunItem.TestCaseName);
 
             StartActivity(intent);
         }
@@ -104,7 +107,7 @@ namespace NUnitLite.MonoDroid
         {
             RunOnUiThread(() =>
             {
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                var builder = new AlertDialog.Builder(this);
                 builder.SetTitle("Failed to execute unit-test suite");
                 builder.SetMessage(exception.ToString());
 
