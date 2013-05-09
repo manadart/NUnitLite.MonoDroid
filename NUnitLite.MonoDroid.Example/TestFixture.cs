@@ -23,5 +23,12 @@ namespace NUnitLite.MonoDroid.Example
         {
             throw new Exception("Test exception");
         }
+
+        [Test]
+        public void LongTest()
+        {
+            Thread.Sleep(10000);
+            Assert.That(true);
+        }
     }
 }
