@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Android.App;
-using Android.Widget;
-using Android.OS;
 
 namespace NUnitLite.MonoDroid.Example
 {

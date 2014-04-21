@@ -21,57 +21,31 @@ namespace NUnitLite.MonoDroid
         /// <summary>
         /// Handles the creation of the activity
         /// </summary>
-        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             _testResultsAdapter = new TestResultsListAdapter(this);
             ListAdapter = _testResultsAdapter;
+
+            RunTests();
         }
 
-        protected override void OnResume()
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            base.OnResume();
+            menu.Add("Re-run");
+            return true;
+        }
 
-            var testAssemblies = GetAssembliesForTest();
-            var testAssemblyEnumerator = testAssemblies.GetEnumerator();
-            var testRunner = new TestRunner();
-
-            // Clear the test result list
-            TestRunContext.Current.TestResults.Clear();
-
-            _testResultsAdapter.NotifyDataSetInvalidated();
-            _testResultsAdapter.NotifyDataSetChanged();
-
-            // Add a test listener for the test runner
-            testRunner.AddListener(new UITestListener((TestResultsListAdapter)ListAdapter));
-
-            // Start the test process in a background task
-            Task.Factory.StartNew(() =>
-            {
-                while (testAssemblyEnumerator.MoveNext())
-                {
-                    try
-                    {
-                        var assembly = testAssemblyEnumerator.Current;
-                        testRunner.Run(assembly);
-                    }
-                    catch (Exception ex)
-                    {
-                        ShowErrorDialog(ex);
-                    }
-                }
-            });
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            RunTests();
+            return true;
         }
 
         /// <summary>
         /// Handles list item click
         /// </summary>
-        /// <param name="l"></param>
-        /// <param name="v"></param>
-        /// <param name="position"></param>
-        /// <param name="id"></param>
         protected override void OnListItemClick(ListView l, View v, int position, long id)
         {
             var testRunItem = TestRunContext.Current.TestResults[position];
@@ -99,22 +73,46 @@ namespace NUnitLite.MonoDroid
         /// </summary>
         protected abstract Type GetDetailsActivityType { get; }
 
+        private void RunTests()
+        {
+            var testAssemblies = GetAssembliesForTest();
+            var testAssemblyEnumerator = testAssemblies.GetEnumerator();
+            var testRunner = new TestRunner();
+
+            _testResultsAdapter.NotifyDataSetInvalidated();
+            _testResultsAdapter.NotifyDataSetChanged();
+
+            // Add a test listener for the test runner
+            testRunner.AddListener(new UITestListener((TestResultsListAdapter)ListAdapter));
+
+            // Start the test process in a background task
+            Task.Factory.StartNew(() =>
+            {
+                while (testAssemblyEnumerator.MoveNext())
+                {
+                    try
+                    {
+                        var assembly = testAssemblyEnumerator.Current;
+                        testRunner.Run(assembly);
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowErrorDialog(ex);
+                    }
+                }
+            });
+        }
+
         /// <summary>
         /// Displays an error dialog in case a test run fails
         /// </summary>
-        /// <param name="exception"></param>
         private void ShowErrorDialog(Exception exception)
         {
-            RunOnUiThread(() =>
-            {
-                var builder = new AlertDialog.Builder(this);
-                builder.SetTitle("Failed to execute unit-test suite");
-                builder.SetMessage(exception.ToString());
-
-                var dialog = builder.Create();
-
-                dialog.Show();
-            });
+            RunOnUiThread(() => new AlertDialog.Builder(this)
+                .SetTitle("Failed to execute unit-test suite")
+                .SetMessage(exception.ToString())
+                .Create()
+                .Show());
         }
     }
 }

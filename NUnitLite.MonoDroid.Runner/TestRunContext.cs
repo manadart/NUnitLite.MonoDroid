@@ -1,14 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace NUnitLite.MonoDroid
 {
@@ -21,9 +12,9 @@ namespace NUnitLite.MonoDroid
     public class TestRunContext
     {
         private static TestRunContext _current;
-        private static object _lockHandle = new object();
+        private static readonly object _lockHandle = new object();
 
-        private List<TestRunInfo> _testResults;
+        private readonly List<TestRunInfo> _testResults;
 
         /// <summary>
         /// Initializes a new instance of <see cref="TestRunContext"/>
