@@ -1,6 +1,7 @@
 
 #ignore thumbnails created by windows
 Thumbs.db
+
 #Ignore files build by Visual Studio
 *.obj
 *.pdb
@@ -16,3 +17,5 @@ _ReSharper*/
 *.resharper*
 *.suo
 
+#Ignore merge conflict remnants
+*.orig

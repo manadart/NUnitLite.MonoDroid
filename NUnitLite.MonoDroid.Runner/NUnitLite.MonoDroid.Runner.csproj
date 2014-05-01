@@ -45,8 +45,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestResultsListAdapter.cs" />
-    <Compile Include="TestResultViewHolder.cs" />
+    <Compile Include="TestResultsListView.cs" />
     <Compile Include="TestRunDetailsActivity.cs" />
+    <Compile Include="TestRunDetailsView.cs" />
     <Compile Include="TestRunInfo.cs" />
     <Compile Include="TestRunContext.cs" />
     <Compile Include="TestRunnerActivity.cs" />

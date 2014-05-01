@@ -1,14 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace NUnitLite.MonoDroid
 {
@@ -17,8 +10,8 @@ namespace NUnitLite.MonoDroid
     /// </summary>
     public class UITestListener : ITestListener
     {
-        private Handler _threadHandler;
-        private TestResultsListAdapter _listAdapter;
+        private readonly Handler _threadHandler;
+        private readonly TestResultsListAdapter _listAdapter;
 
         /// <summary>
         /// Initializes a new instance <see cref="UITestListener"/>
@@ -42,14 +35,9 @@ namespace NUnitLite.MonoDroid
         {
             _threadHandler.Post(() =>
             {
-                TestRunContext.Current.TestResults.Add(new TestRunInfo()
-                {
-                    Description = test.Name,
-                    TestCaseName = test.FullName,
-                    Running = true,
-                    Passed = false,
-                    IsTestSuite = test is TestSuite
-                });
+                var testRunInfo = FindOrAddTestRunInfo(test);
+                testRunInfo.Running = true;
+                testRunInfo.Passed = false;
 
                 _listAdapter.NotifyDataSetInvalidated();
                 _listAdapter.NotifyDataSetChanged();
@@ -64,19 +52,35 @@ namespace NUnitLite.MonoDroid
         {
             _threadHandler.Post(() =>
             {
-                var testRunItem = TestRunContext.Current.TestResults
-                    .FirstOrDefault(item => item.TestCaseName == result.Test.FullName);
-
-                if (testRunItem != null)
-                {
-                    testRunItem.Passed = result.IsSuccess;
-                    testRunItem.Running = false;
-                    testRunItem.TestResult = result;
-                }
+                var testRunInfo = FindOrAddTestRunInfo(result.Test);
+                testRunInfo.Passed = result.IsSuccess;
+                testRunInfo.Running = false;
+                testRunInfo.TestResult = result;
 
                 _listAdapter.NotifyDataSetInvalidated();
                 _listAdapter.NotifyDataSetChanged();
             });
+        }
+
+        private static TestRunInfo FindOrAddTestRunInfo(ITest test)
+        {
+            var testRunItem =
+                test.FullName != null
+                    ? TestRunContext.Current.TestResults
+                        .FirstOrDefault(item => item.TestCaseName == test.FullName)
+                    : TestRunContext.Current.TestResults
+                        .FirstOrDefault(item => item.Description == test.Name);
+            if (testRunItem == null)
+            {
+                testRunItem = new TestRunInfo
+                {
+                    Description = test.Name,
+                    TestCaseName = test.FullName,
+                    IsTestSuite = test is TestSuite
+                };
+                TestRunContext.Current.TestResults.Add(testRunItem);
+            }
+            return testRunItem;
         }
     }
 }

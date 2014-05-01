@@ -57,6 +57,7 @@
     <Compile Include="Constraints\EmptyConstraint.cs" />
     <Compile Include="Constraints\EqualConstraint.cs" />
     <Compile Include="Constraints\EqualityAdapter.cs" />
+    <Compile Include="Constraints\ExceptionTypeConstraint.cs" />
     <Compile Include="Constraints\FloatingPointNumerics.cs" />
     <Compile Include="Constraints\IResolveConstraint.cs" />
     <Compile Include="Constraints\MessageWriter.cs" />
