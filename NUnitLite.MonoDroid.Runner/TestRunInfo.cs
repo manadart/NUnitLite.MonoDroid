@@ -23,6 +23,28 @@ namespace NUnitLite.MonoDroid
         public bool IsTestSuite { get; set; }
 
         /// <summary>
+        /// Gets whether this is a test assembly
+        /// </summary>
+        public bool IsAssembly
+        {
+            get
+            {
+                return IsTestSuite && !string.IsNullOrEmpty(Description) && string.IsNullOrEmpty(TestCaseName);
+            }
+        }
+
+        /// <summary>
+        /// Gets whether this is a test class
+        /// </summary>
+        public bool IsClass
+        {
+            get
+            {
+                return IsTestSuite && !string.IsNullOrEmpty(Description) && !string.IsNullOrEmpty(TestCaseName);
+            }
+        }
+
+        /// <summary>
         /// Gets the description for the test run
         /// </summary>
         public string Description { get; set; }
@@ -35,6 +57,6 @@ namespace NUnitLite.MonoDroid
         /// <summary>
         /// Gets the test result for this test run
         /// </summary>
-        public NUnitLite.TestResult TestResult { get; set; }
+        public TestResult TestResult { get; set; }
     }
 }

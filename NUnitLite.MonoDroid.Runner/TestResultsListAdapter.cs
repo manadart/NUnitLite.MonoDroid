@@ -9,7 +9,7 @@ namespace NUnitLite.MonoDroid
     /// <summary>
     /// List adapter used to display test results
     /// </summary>
-    public class TestResultsListAdapter : BaseAdapter
+    public class TestResultsListAdapter : BaseAdapter, IBaseAdapter
     {
         private readonly Context _context;
 
