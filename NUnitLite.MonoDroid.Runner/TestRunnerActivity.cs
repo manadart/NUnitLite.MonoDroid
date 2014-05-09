@@ -31,6 +31,14 @@ namespace NUnitLite.MonoDroid
             RunTests();
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            _testResultsAdapter.NotifyDataSetInvalidated();
+            _testResultsAdapter.NotifyDataSetChanged();
+        }
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             menu.Add("Re-run");
