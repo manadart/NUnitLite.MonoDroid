@@ -27,7 +27,10 @@ namespace NUnitLite.MonoDroid
                 }
             };
             indicatorView.SetBackgroundColor(
-                testRunInfo.Running ? Color.Gray : testRunInfo.Passed ? Color.Green : Color.Red);
+                testRunInfo.IsIgnored ? Color.Yellow
+                : testRunInfo.Running ? Color.Gray
+                : testRunInfo.Passed ? Color.Green
+                : Color.Red);
             AddView(indicatorView);
 
             var container = new LinearLayout(context)
