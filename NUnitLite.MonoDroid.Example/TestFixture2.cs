@@ -24,6 +24,12 @@ namespace NUnitLite.MonoDroid.Example
             Assert.That(true);
         }
 
+        [Test, Ignore]
+        public void TestIgnore()
+        {
+            Assert.That(true);
+        }
+
         [Test]
         public void TestFail()
         {

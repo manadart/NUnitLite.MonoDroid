@@ -23,6 +23,11 @@ namespace NUnitLite.MonoDroid
         public bool IsTestSuite { get; set; }
 
         /// <summary>
+        /// Gets or sets whether this test is ignored
+        /// </summary>
+        public bool IsIgnored { get; set; }
+
+        /// <summary>
         /// Gets whether this is a test assembly
         /// </summary>
         public bool IsAssembly

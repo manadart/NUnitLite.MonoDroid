@@ -15,7 +15,11 @@ namespace NUnitLite.MonoDroid
             Orientation = Orientation.Horizontal;
             
             var indicatorView = new View(context);
-            indicatorView.SetBackgroundColor(itemContent.Running ? Color.Gray : itemContent.Passed ? Color.Green : Color.Red);
+            indicatorView.SetBackgroundColor(
+                itemContent.IsIgnored ? Color.Yellow
+                : itemContent.Running ? Color.Gray
+                : itemContent.Passed ? Color.Green
+                : Color.Red);
 
             var descriptionView = new TextView(context)
             {

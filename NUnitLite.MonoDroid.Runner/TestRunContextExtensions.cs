@@ -75,7 +75,8 @@ namespace NUnitLite.MonoDroid
                 {
                     Description = test.Name,
                     TestCaseName = test.FullName,
-                    IsTestSuite = test is TestSuite
+                    IsTestSuite = test is TestSuite,
+                    IsIgnored = test.IgnoreReason != null
                 };
                 context.TestResults.Add(testRunItem);
             }
