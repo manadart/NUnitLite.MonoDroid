@@ -51,11 +51,14 @@ namespace NUnitLite.MonoDroid
 
         public void TestStarted(ITest test)
         {
+            _testRunInfo.Running = true;
             RunOnUiThread(() => _detailsView.Description = "Running...");
         }
 
         public void TestFinished(TestResult result)
         {
+            _testRunInfo.Running = false;
+            _testRunInfo.Passed = result.IsSuccess;
             _testRunInfo.TestResult = result;
             RunOnUiThread(() => _detailsView.Description = DefaultDescription);
         }
