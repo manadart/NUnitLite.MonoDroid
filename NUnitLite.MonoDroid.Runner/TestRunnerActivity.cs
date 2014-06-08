@@ -108,6 +108,7 @@ namespace NUnitLite.MonoDroid
                         ShowErrorDialog(ex);
                     }
                 }
+                RunOnUiThread(() => Toast.MakeText(this, "Test run finished", ToastLength.Short).Show());
             });
         }
 
